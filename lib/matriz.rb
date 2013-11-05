@@ -10,6 +10,23 @@ class Matrices
 	
 	attr_reader :filas, :columnas, :matriz
 
+
+#####Mostrar matriz
+
+	def mostrar
+		i=0
+		  while i < @matriz.length
+		   #print "Posicion #{i}---> "
+		   print @matriz[i]
+		   print "\n"
+		   i += 1
+		  end    #Fin del bucle
+
+	end
+
+
+
+
 #####Cálculo de Suma de Matrices Enteras
 	def +(other)
               i=0
@@ -24,6 +41,63 @@ class Matrices
                 end
                 Matrices.new(matriz_cp)
         end
+
+####Cálculo Resta de Matrices Enteras    
+        def - (other)
+                i=0
+                 matriz_cp = @matriz
+                while i < @filas
+                        j=0
+                        while j < @columnas
+                           matriz_cp[i][j] = matriz_cp[i][j] - other.matriz[i][j]
+                                j += 1
+                        end
+                        i += 1
+                end
+                Matrices.new(matriz_cp)
+        end
+
+
+#####Calculo de Multiplicacion Mátrices enteras  
+        def * (other)
+                i=0
+                 matriz_cp = Array.new(@filas) {Array.new(other.columnas)}
+                while i < @filas
+                        j=0
+                        while j < other.columnas
+                                matriz_cp[i][j] = 0
+                                k=0
+                                while k < @columnas 
+                                   matriz_cp[i][j] = matriz_cp[i][j] + (matriz[i][k] * other.matriz[k][j])
+                                        k+=1
+                                end
+                                j += 1
+                        end
+                        i += 1
+                end
+                Matrices.new(matriz_cp)
+        end
+
+
+
+
+####Traspuesta de una matriz
+	def traspuesta 
+		i=0
+		mtrasp = Array.new(@filas) {Array.new(self.columnas)}
+		while i < @filas
+			j=0
+			while j < @columnas
+				mtrasp[i][j] = self.matriz[j][i]
+				j+=1
+			end
+			i+=1
+		end
+		Matrices.new(mtrasp)
+	end
+
+end
+
 
 
 
