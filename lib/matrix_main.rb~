@@ -12,10 +12,6 @@ require "../lib/matriz.rb"
 
 	matrizr = Matrices.new([[0,0,0],[0,0,0],[0,0,0]])
 
-	matrizt = Matrices.new([[5,5,7],[4,5,8],[7,8,9]])
-
-	matrizo = Matrices.new([[2,4,6],[1,3,5],[2,7,8]])
-
 
 	puts "Matriz 1" 
 	
@@ -45,14 +41,19 @@ require "../lib/matriz.rb"
 ##TRASPUESTAS
 	puts "TRASPUESTA de la primera matriz:"
 	
-	puts "#{matrizt.traspuesta.mostrar}"
-
-##OPUESTA
-
+	puts "#{matriz1.traspuesta.mostrar}"
+#
+	puts "TRASPUESTA de la segunda matriz:"
+	
+	puts "#{matriz2.traspuesta.mostrar}"
+##OPUESTAS
+	puts "OPUESTA de la primera matriz:"
+	
+	puts "#{matriz4.opuesta.mostrar}"
 #
 	puts "OPUESTA de la segunda matriz:"
 	
-	puts "#{matrizo.opuesta.mostrar}"
+	puts "#{matriz5.opuesta.mostrar}"
 
 
 

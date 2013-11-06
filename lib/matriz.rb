@@ -43,7 +43,7 @@ class Matrices
         end
 
 ####Cálculo Resta de Matrices Enteras    
-        def - (other)
+        def -(other)
                 i=0
                  matriz_cp = @matriz
                 while i < @filas
@@ -95,6 +95,28 @@ class Matrices
 		end
 		Matrices.new(mtrasp)
 	end
+
+
+####Opuesta de una matriz
+	def opuesta
+
+		i=0
+		mop = Array.new(@filas) {Array.new(self.columnas)}
+		while i < @filas
+			j=0
+			while j < @columnas
+				mop[i][j] = (self.matriz[i][j]) * (- 1)
+				j+=1
+			end
+			i+=1
+		end
+		Matrices.new(mop)
+
+	end
+
+
+
+
 
 end
 
