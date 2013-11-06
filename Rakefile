@@ -1,17 +1,16 @@
-require 'rspec/core/rake_task'
-#para no tener que poner -Ilib
-$:.unshift File.dirname(__FILE__) + 'lib'
+task :default => :bin
 
-#------------------------------------------------------------------------------- 
-task :default => :spec
-
+desc "Run lib/matriz.rb"
+task :bin do
+        sh "ruby lib/matriz.rb"
+end
 #------------------------------------------------------------------------------- 
 desc "Ejecutar tests"
 task :spec do
-        sh "rspec spec/racional_spec.rb --format documentation"
+        sh "rspec -I. spec/racional_spec.rb --format documentation"
 end
 #------------------------------------------------------------------------------- 
 desc "Ejecutar test con formato html"
 task :thtml do
-        sh "rspec spec/racional_spec.rb --format html > resultados.html"
+        sh "rspec -I. spec/racional_spec.rb --format html > resultados.html"
 end
