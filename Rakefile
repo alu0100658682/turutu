@@ -1,9 +1,10 @@
-task :default => :bin
+$:.unshift File.dirname(__FILE__) + 'lib'
+$:.unshift './lib', './spec'
 
-desc "Run lib/matriz.rb"
-task :bin do
-        sh "ruby lib/matriz.rb"
-end
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+task :default => :spec
+
 #------------------------------------------------------------------------------- 
 desc "Ejecutar tests"
 task :spec do
