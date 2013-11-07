@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'nokogiri'
 
 require "rspec"
-require "../lib/matriz.rb"
+require "./lib/matriz.rb"
 
 describe Matrices do
   before :each do
