@@ -4,29 +4,14 @@ $:.unshift './lib', './spec'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :default => :spec
-#######################################Coromoto
 
-$:.unshift File.dirname(__FILE__) + 'lib'
-
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new
-task :default => :spec
-
-desc "Run frac_main.rb"
-task :bin do
-  sh "ruby -I lib/frac_main.rb"
+#------------------------------------------------------------------------------- 
+desc "Ejecutar tests"
+task :spec do
+        sh "rspec -I. spec/racional_spec.rb --format documentation"
 end
-
-desc "Run tests with --format documentation"
-task :test do
-  sh "rspec -I lib/racional_spec.rb --format documentation"
-end
-
-desc "Run tests with format: html"
+#------------------------------------------------------------------------------- 
+desc "Ejecutar test con formato html"
 task :thtml do
-  sh "rspec spec/racional_spec.rb --format html"
+        sh "rspec -I. spec/racional_spec.rb --format html > resultados.html"
 end
-
-
-##############
-
