@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'nokogiri'
 class Matrices
 	include Comparable
 	include Enumerable
@@ -105,7 +108,7 @@ class Matrices
 		while i < @filas
 			j=0
 			while j < @columnas
-				mop[i][j] = (self.matriz[j][i]) * (- 1)
+				mop[i][j] = (self.matriz[i][j]) * (- 1)
 				j+=1
 			end
 			i+=1

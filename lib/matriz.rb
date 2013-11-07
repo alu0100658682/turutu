@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'nokogiri'
+
 class Matrices
 	include Comparable
 	include Enumerable
